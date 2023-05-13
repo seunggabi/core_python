@@ -1,0 +1,7 @@
+.idea
+
+venv
+
+core_python.egg-info
+dist
+build
