@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='core-python',
+    name='seunggabi_core_python',
     version='0.0.2',
     description='A collection of core Python modules',
     author='seunggabi',
     author_email='seunggabi@gmail.com',
-    url='https://github.com/seunggabi/core-python',
+    url='https://github.com/seunggabi/core_python',
     packages=find_packages(),
     install_requires=[],
     classifiers=[
