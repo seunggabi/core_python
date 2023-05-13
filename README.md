@@ -1,4 +1,4 @@
-# core_python
+# [core_python](https://pypi.org/project/seunggabi-core-python/)
 
 ### install
 ```shell
