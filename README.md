@@ -17,14 +17,9 @@ pip3 install -r requirements.txt
 
 ### build
 ```shell
-rm -rf dist
-rm -rf build
-rm -rf seunggabi_core_python.egg-info
+cd bin
 
-python3 setup.py sdist bdist_wheel
-```
-
-### deploy
-```shell
-python3 -m twine upload dist/*
+sh version.sh
+sh tag.sh
+sh deploy.sh
 ```
