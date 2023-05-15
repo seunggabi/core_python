@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='seunggabi_core_python',
-    version='0.0.2',
+    version='0.1.0',
     description='A collection of core Python modules',
     author='seunggabi',
     author_email='seunggabi@gmail.com',
