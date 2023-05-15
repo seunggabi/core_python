@@ -1,7 +1,7 @@
 import json
 
 
-def pretty(obj):
+def pretty(obj) -> str:
     return json.dumps(
         obj,
         ensure_ascii=False,

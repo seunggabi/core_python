@@ -5,14 +5,14 @@ from seunggabi_core_python.const import DEFAULT, CREDENTIALS
 from seunggabi_core_python.exception.bad_request import BadRequest
 
 
-def home():
+def home() -> str:
     return os.path.expanduser("~")
 
 
 def path(
     group: str = None,
     context: str = None,
-):
+) -> str:
     return f".{group}/{context}"
 
 
