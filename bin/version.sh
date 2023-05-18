@@ -1,9 +1,15 @@
 #!/bin/bash
 
-FILE=$1
-if [ -z "${FILE}" ]; then
+CMD=$1
+if [ -z "$CMD" ]; then
+  CMD="z"
+fi
+
+FILE=$2
+if [ -z "$FILE" ]; then
   FILE="../seunggabi_core_python/__init__.py"
 fi
+echo "[cmd] $CMD"
 echo "[file] $FILE"
 
 VERSION=$(python3 -c "exec(open('../seunggabi_core_python/__init__.py').read()); print(__version__)")
@@ -13,11 +19,6 @@ IFS='.' read -r -a VERSION_PARTS <<< "$VERSION"
 X=${VERSION_PARTS[0]}
 Y=${VERSION_PARTS[1]}
 Z=${VERSION_PARTS[2]}
-
-CMD=$1
-if [ -z "${CMD}" ]; then
-  CMD="z"
-fi
 
 case "$CMD" in
     "x")

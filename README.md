@@ -17,9 +17,11 @@ pip3 install -r requirements.txt
 
 ### build
 ```shell
+source venv/bin/activate
+
 cd bin
 
-sh version.sh
-sh tag.sh
+sh version.sh y
+sh tag.sh 1
 sh deploy.sh
 ```
