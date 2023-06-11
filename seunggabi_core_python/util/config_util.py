@@ -28,10 +28,11 @@ def get(
     profile = profile or DEFAULT
 
     config = ConfigParser()
+    p = f"{home()}/{path(group, context)}"
     try:
-        config.read(f"{home()}/{path(group, context)}")
+        config.read(p)
     except:
-        raise NotFound() from None
+        raise NotFound(p) from None
 
     return config._sections[profile]
 

@@ -1,3 +1,6 @@
 class NotFound(Exception):
-    def __init__(self):
-        super().__init__("404 NOT_FOUND")
+    def __init__(
+        self,
+        msg: str = ""
+    ):
+        super().__init__(f"[404 NOT_FOUND] {msg}")
