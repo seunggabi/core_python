@@ -3,6 +3,7 @@ from configparser import ConfigParser
 
 from seunggabi_core_python.const import DEFAULT, CREDENTIALS
 from seunggabi_core_python.exception.bad_request import BadRequest
+from seunggabi_core_python.exception.not_found import NotFound
 
 
 def home() -> str:
@@ -27,7 +28,10 @@ def get(
     profile = profile or DEFAULT
 
     config = ConfigParser()
-    config.read(f"{home()}/{path(group, context)}")
+    try:
+        config.read(f"{home()}/{path(group, context)}")
+    except:
+        raise NotFound()
 
     return config._sections[profile]
 
