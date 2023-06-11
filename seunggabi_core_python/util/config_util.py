@@ -31,7 +31,7 @@ def get(
     try:
         config.read(f"{home()}/{path(group, context)}")
     except:
-        raise NotFound()
+        raise NotFound() from None
 
     return config._sections[profile]
 

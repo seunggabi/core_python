@@ -21,7 +21,7 @@ source venv/bin/activate
 
 cd bin
 
-sh version.sh y
+sh version.sh z
 sh tag.sh 1
 sh deploy.sh
 ```
