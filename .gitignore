@@ -1,6 +1,5 @@
 .idea
-
-venv
+.venv
 
 seunggabi_core_python.egg-info
 dist
