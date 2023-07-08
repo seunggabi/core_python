@@ -2,6 +2,8 @@ from setuptools import setup, find_packages
 
 import seunggabi_core_python
 
+from seunggabi_core_python.util import dependency_util
+
 setup(
     name="seunggabi_core_python",
     version=seunggabi_core_python.__version__,
@@ -10,7 +12,7 @@ setup(
     author_email="seunggabi@gmail.com",
     url="https://github.com/seunggabi/core_python",
     packages=find_packages(),
-    install_requires=[],
+    install_requires=dependency_util.get(),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
