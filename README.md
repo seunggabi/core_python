@@ -17,7 +17,7 @@ pip3 install -r requirements.txt
 
 ### build
 ```shell
-source venv/bin/activate
+source .venv/bin/activate
 
 cd bin
 
