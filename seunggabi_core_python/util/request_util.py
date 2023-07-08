@@ -9,4 +9,8 @@ def get(
 ) -> dict:
     params = params or {}
 
-    return requests.get(url, params=params).json()
+    response = requests.get(url, params=params)
+    try:
+        return response.json()
+    except:
+        return response.text
