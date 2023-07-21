@@ -11,4 +11,4 @@ def pretty(obj: dict) -> str:
 
 
 def to_dict(s: str) -> dict:
-    return json.load(s)
+    return json.loads(s)
