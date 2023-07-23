@@ -9,7 +9,7 @@ TTL = 10
 
 def conn(
     host: str = None,
-    port: int = PORT
+    port: int = PORT,
 ):
     if host is None:
         raise BadRequest()
@@ -20,21 +20,29 @@ def conn(
     )
 
 
-def get(key: str = None):
-    o = conn().get(key)
+def get(
+    conn=None,
+    key: str = None,
+):
+    if conn is None:
+        raise BadRequest()
+
+    o = conn.get(key)
     if o:
         return json_util.to_dict(o)
     return o
 
 
 def set(
+    conn=None,
     key: str = None,
     value=None,
     ttl: int = TTL,
 ):
-    r = conn()
+    if conn is None:
+        raise BadRequest()
 
-    r.set(key, json_util.pretty(value))
-    r.expire(key, ttl)
+    conn.set(key, json_util.pretty(value))
+    conn.expire(key, ttl)
 
     return value
