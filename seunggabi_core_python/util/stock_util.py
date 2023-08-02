@@ -5,7 +5,7 @@ def unit(n):
     n = abs(n)
     index = str(n).find('.')
 
-    if n < 10:
+    if n < 1:
         pow = len(str(n)[index + 1:])
 
         v = Decimal(1)
@@ -13,6 +13,9 @@ def unit(n):
             v /= Decimal(10)
 
         return v
+
+    if n < 10:
+        return Decimal("0.01")
     if n < 100:
         return Decimal("0.1")
 
