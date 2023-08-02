@@ -9,12 +9,15 @@ class MySQL:
         password: str = None,
         db: str = None,
         charset: str = "utf8",
+        database: str = None,
     ):
+        database = db or database
+
         self.conn = pymysql.connect(
             host=host,
             user=user,
             password=password,
-            db=db,
+            database=database,
             charset=charset
         )
 
