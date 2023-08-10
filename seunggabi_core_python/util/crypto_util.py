@@ -27,6 +27,10 @@ def encode(plain: str) -> str:
     return base64.b64encode(plain.encode(ENCODE)).decode(ENCODE)
 
 
+def decode(plain: str) -> str:
+    return base64.b64decode(plain.encode(ENCODE)).decode(ENCODE)
+
+
 def crypt(
     plain: str,
     seed: str = "",
@@ -42,4 +46,7 @@ def crypt(
 
 
 if __name__ == '__main__':
-    print(crypt("seunggabi@gmail.com"))
+    e = crypt("seunggabi@gmail.com")
+    d = decode(e)
+    print(e)
+    print(d)
