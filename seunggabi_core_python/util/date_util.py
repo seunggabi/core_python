@@ -1,3 +1,5 @@
+import time
+
 from datetime import datetime
 
 
@@ -7,3 +9,7 @@ def today(fmt: str = "%Y%m%d") -> str:
 
 def isoformat() -> str:
     return datetime.now().isoformat()
+
+
+def timestamp() -> str:
+    return str(time.time())
