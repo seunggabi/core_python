@@ -9,22 +9,22 @@ DELIMITER = "$"
 
 def md5(plain: str, seed: str) -> str:
     h = hashlib.md5()
-    h.update(plain.encode(ENCODE) + seed.encode(ENCODE))
+    s = plain + DELIMITER + seed
+
+    h.update(s.encode(ENCODE))
     return h.hexdigest()
 
 
 def sha256(plain: str, seed: str) -> str:
     h = hashlib.sha256()
-    h.update(plain.encode(ENCODE) + seed.encode(ENCODE))
+    s = plain + DELIMITER + seed
+
+    h.update(s.encode(ENCODE))
     return h.hexdigest()
 
 
 def encode(plain: str) -> str:
-    return base64.b64encode(plain).decode(ENCODE)
-
-
-def decode(cipher: str) -> str:
-    return base64.b64decode(cipher).decode(ENCODE)
+    return base64.b64encode(plain.encode(ENCODE)).decode(ENCODE)
 
 
 def crypt(
@@ -38,4 +38,8 @@ def crypt(
     c = md5(plain, seed)
     c = sha256(c, seed2)
 
-    return encode(c + DELIMITER + date_util.timestamp())
+    return encode(c + DELIMITER + str(date_util.timestamp()))
+
+
+if __name__ == '__main__':
+    print(crypt("seunggabi@gmail.com"))
