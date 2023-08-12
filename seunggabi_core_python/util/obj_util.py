@@ -2,13 +2,19 @@ def safe_get(
     obj: dict,
     key: str,
     default=None,
+    force_key_str=False,
 ):
-    k = key.split(".")
-
     try:
-        for i in k:
-            obj = obj[i]
-        return obj if obj is not None else default
+        for k in key.split("."):
+            if not force_key_str:
+                try:
+                    k = int(k)
+                except:
+                    pass
+
+            obj = obj[k]
+
+        return default if obj is None else obj
     except:
         return default
 
