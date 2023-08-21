@@ -2,13 +2,19 @@ import json
 
 
 def pretty(obj: dict) -> str:
-    return json.dumps(
-        obj,
-        ensure_ascii=False,
-        sort_keys=True,
-        indent=4
-    )
+    try:
+        return json.dumps(
+            obj,
+            ensure_ascii=False,
+            sort_keys=True,
+            indent=4
+        )
+    except:
+        return obj
 
 
 def to_dict(s: str) -> dict:
-    return json.loads(s)
+    try:
+        return json.loads(s)
+    except:
+        return s
