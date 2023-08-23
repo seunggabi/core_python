@@ -2,22 +2,28 @@ import os
 import re
 
 
-def read(filename: str) -> str:
-    with open(filename) as file:
+def read(name: str) -> str:
+    with open(name) as file:
         lines = [line.rstrip() for line in file]
 
         return "\n".join(lines)
 
 
-def count(
+def name(
     path: str,
     regexp: str,
-) -> int:
+) -> list:
     pattern = re.compile(regexp)
 
-    count = 0
-    for filename in os.listdir(path):
-        if pattern.search(filename):
-            count += 1
+    return [x for x in os.listdir(path) if pattern.search(x)]
 
-    return count
+
+def read_all(
+    path: str,
+    regexp: str,
+) -> dict:
+    o = {}
+    for i in name(path, regexp):
+        o[i] = read(f"{path}/{i}")
+
+    return o
