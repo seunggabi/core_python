@@ -8,7 +8,6 @@ rm -rf .venv
 python3 -m venv .venv
 source .venv/bin/activate
 
-pip3 install requests
 pip3 install -r requirements.txt
 ```
 ```shell
@@ -19,7 +18,7 @@ pip3 install -r requirements.txt
 ```shell
 source .venv/bin/activate
 
-cd bin
+cd sh
 
 sh version.sh y
 sh tag.sh 1
