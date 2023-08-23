@@ -1,3 +1,6 @@
+import os
+import re
+
 
 def read(filename: str) -> str:
     with open(filename) as file:
@@ -6,9 +9,15 @@ def read(filename: str) -> str:
         return "\n".join(lines)
 
 
-if __name__ == '__main__':
-    import os
+def count(
+    path: str,
+    regexp: str,
+) -> int:
+    pattern = re.compile(regexp)
 
-    path = os.path.dirname(os.path.dirname(__file__))
+    count = 0
+    for filename in os.listdir(path):
+        if pattern.search(filename):
+            count += 1
 
-    print(read(f"{path}/../requirements.txt"))
+    return count
