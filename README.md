@@ -5,8 +5,8 @@
 deactivate
 rm -rf .venv
 
-python3 -m venv .venv
-source .venv/bin/activate
+virtualenv .venv
+. .venv/bin/activate
 
 pip3 install -r requirements.txt
 ```
@@ -16,7 +16,7 @@ pip3 install -r requirements.txt
 
 ### build
 ```shell
-source .venv/bin/activate
+. .venv/bin/activate
 
 cd sh
 

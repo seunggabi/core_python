@@ -3,7 +3,7 @@
 rm -rf .venv
 
 virtualenv .venv
-source .venv/bin/activate
+. .venv/bin/activate
 
 pip3 install -r requirements.txt
 ```

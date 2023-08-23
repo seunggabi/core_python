@@ -22,10 +22,10 @@ jobs:
           python-version: '3.11'
       - run: ./sh/install.sh
         working-directory: ${{ env.DIR }}
-      - id: app
+      - id: test
         run: |
           export PYTHONPATH=${PYTHONHOME}:../seunggabi_core_python:. && pytest */*.py
           status=$?
           echo "status=${status}" >> "$GITHUB_OUTPUT"
         working-directory: ${{ env.DIR }}
-      - run: exit ${{ steps.app.outputs.status }}
+      - run: exit ${{ steps.test.outputs.status }}
