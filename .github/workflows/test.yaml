@@ -24,7 +24,7 @@ jobs:
         working-directory: ${{ env.DIR }}
       - id: app
         run: |
-          export PYTHONPATH=${PYTHONHOME}:../seunggabi_core_python && pytest */*.py
+          export PYTHONPATH=${PYTHONHOME}:../seunggabi_core_python:. && pytest */*.py
           status=$?
           echo "status=${status}" >> "$GITHUB_OUTPUT"
         working-directory: ${{ env.DIR }}
