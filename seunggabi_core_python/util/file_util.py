@@ -15,7 +15,7 @@ def name(
 ) -> list:
     pattern = re.compile(regexp)
 
-    return [x for x in os.listdir(path) if pattern.search(x)]
+    return sorted([x for x in os.listdir(path) if pattern.search(x)])
 
 
 def read_all(
