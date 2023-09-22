@@ -18,7 +18,7 @@ class MySQL:
             user=user,
             password=password,
             database=database,
-            charset=charset
+            charset=charset,
         )
 
         self.cursor = self.conn.cursor()

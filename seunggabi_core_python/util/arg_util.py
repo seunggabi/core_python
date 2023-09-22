@@ -10,7 +10,7 @@ class Argument:
         short: str = None,
         default: str = None,
         help: str = None,
-        is_param: str = True
+        is_param: str = True,
     ):
         self.name = name
         self.short = short or name[0:1]
@@ -34,9 +34,7 @@ def make(config: list = None) -> Any:
     for i in args:
         usage.append(f"[--{i.name} <{i.name}>]")
 
-    arg_parser = ArgumentParser(
-        usage=" ".join(usage)
-    )
+    arg_parser = ArgumentParser(usage=" ".join(usage))
 
     for i in args:
         arg_parser.add_argument(

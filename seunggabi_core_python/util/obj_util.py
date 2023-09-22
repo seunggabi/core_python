@@ -19,13 +19,8 @@ def safe_get(
         return default
 
 
-if __name__ == '__main__':
-    obj = {
-        "a": 1,
-        "z": {
-            "b": 0
-        }
-    }
+if __name__ == "__main__":
+    obj = {"a": 1, "z": {"b": 0}}
     print(safe_get(obj, "a"))
     print(safe_get(obj, "b"))
     print(safe_get(obj, "b", 3))
