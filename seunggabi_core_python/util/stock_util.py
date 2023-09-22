@@ -3,10 +3,10 @@ from decimal import Decimal
 
 def unit(n):
     n = abs(n)
-    index = str(n).find('.')
+    index = str(n).find(".")
 
     if n < 1:
-        pow = len(str(n)[index + 1:])
+        pow = len(str(n)[index + 1 :])
 
         v = Decimal(1)
         for _ in range(pow):
@@ -29,10 +29,7 @@ def unit(n):
     return int(v)
 
 
-def gap(
-    start: Decimal,
-    end: Decimal
-) -> int:
+def gap(start: Decimal, end: Decimal) -> int:
     cnt = 0
     while start <= end:
         start += unit(start)
@@ -41,10 +38,5 @@ def gap(
     return cnt
 
 
-if __name__ == '__main__':
-    print(
-        gap(
-            Decimal("0.01"),
-            Decimal(1005)
-        )
-    )
+if __name__ == "__main__":
+    print(gap(Decimal("0.01"), Decimal(1005)))

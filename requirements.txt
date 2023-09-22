@@ -5,3 +5,7 @@ requests
 bs4
 pymysql
 redis
+
+virtualenv
+black
+pre-commit
