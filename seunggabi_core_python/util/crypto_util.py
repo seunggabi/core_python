@@ -31,11 +31,7 @@ def decode(plain: str) -> str:
     return base64.b64decode(plain.encode(ENCODE)).decode(ENCODE)
 
 
-def crypt(
-    plain: str,
-    seed: str = "",
-    seed2: str = ""
-) -> str:
+def crypt(plain: str, seed: str = "", seed2: str = "") -> str:
     if not seed2:
         seed2 = seed
 
@@ -45,7 +41,7 @@ def crypt(
     return encode(c + DELIMITER + str(date_util.timestamp()))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     e = crypt("seunggabi@gmail.com")
     d = decode(e)
     print(e)

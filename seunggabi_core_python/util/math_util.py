@@ -3,7 +3,4 @@ def safe_divide(x, y):
 
 
 def safe_range(x, _min, _max):
-    return max(
-        min(x, _max),
-        _min
-    )
+    return max(min(x, _max), _min)

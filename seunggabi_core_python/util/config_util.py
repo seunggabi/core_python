@@ -37,7 +37,7 @@ def get(
     return config._sections[profile]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(
         get(
             group="upbit",
