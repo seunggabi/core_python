@@ -9,3 +9,4 @@ redis
 virtualenv
 black
 pre-commit
+pytest
