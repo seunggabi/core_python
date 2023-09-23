@@ -1,3 +1,4 @@
+import pytest
 from util.json_util import *
 
 
@@ -30,3 +31,7 @@ def test_pretty_invalid_input():
     invalid_input = "This is not JSON"
     result = pretty(invalid_input)
     assert result == invalid_input
+
+
+if __name__ == "__main__":
+    pytest.main()

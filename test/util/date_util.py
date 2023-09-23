@@ -1,6 +1,5 @@
-import time
-
-from util.date_util import today, isoformat, timestamp
+import pytest
+from util.date_util import *
 from datetime import datetime
 
 
@@ -31,3 +30,7 @@ def test_timestamp():
     expected = int(float(time.time()))
     actual = int(float(timestamp()))
     assert actual == expected
+
+
+if __name__ == "__main__":
+    pytest.main()
