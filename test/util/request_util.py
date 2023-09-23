@@ -9,7 +9,18 @@ def mock_requests():
         yield m
 
 
-def test_successful_get_request(mock_requests):
+def test_successful_get_request_text(mock_requests):
+    url = "https://example.com/api/data"
+    response_data = "123.{}"
+
+    mock_requests.get(url, text=response_data, status_code=200)
+
+    actual = get(url)
+
+    assert actual == response_data
+
+
+def test_successful_get_request_json(mock_requests):
     url = "https://example.com/api/data"
     response_data = {"key": "value"}
 
