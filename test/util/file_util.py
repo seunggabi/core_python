@@ -6,7 +6,7 @@ PATH = os.path.dirname(os.path.dirname(__file__))
 
 
 def test__read():
-    assert read(f"{PATH}/requirements.txt") == "pytest\npytest-cov"
+    assert read(f"{PATH}/static/a.txt") == "asdf\nasdf"
 
 
 def test__read_all():

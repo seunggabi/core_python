@@ -1,7 +1,7 @@
 import requests
 
-from typing import Union
-from seunggabi_core_python.exception.not_ok import NotOk
+from typing import Union, Any
+from exception.not_ok import NotOk
 
 
 def get(
@@ -9,7 +9,7 @@ def get(
     params: Union[dict, None] = None,
     retry: int = 3,
     headers=None,
-) -> dict:
+) -> Any:
     params = params or {}
     headers = headers or {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
@@ -28,7 +28,7 @@ def get(
             return response.text
     else:
         retry -= 1
-        if retry == 0:
+        if retry <= 0:
             raise NotOk(response.text)
 
         return get(url, params, retry)

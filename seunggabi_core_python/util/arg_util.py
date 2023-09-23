@@ -1,5 +1,4 @@
 from argparse import ArgumentParser
-
 from typing import Any
 
 
