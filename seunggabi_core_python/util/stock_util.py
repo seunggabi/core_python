@@ -9,7 +9,7 @@ def unit(n: Union[int, float, Decimal]):
     if n < 1:
         pow = len(str(n)[index + 1 :])
 
-        v = Decimal(1)
+        v = Decimal("0.01")
         for _ in range(pow):
             v /= Decimal(10)
 
