@@ -4,3 +4,4 @@ pytest-cov
 requests_mock
 mockredispy
 redis
+bs4

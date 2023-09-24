@@ -1,9 +1,9 @@
 import os
 from configparser import ConfigParser
 
-from seunggabi_core_python.const import DEFAULT, CREDENTIALS
-from seunggabi_core_python.exception.bad_request import BadRequest
-from seunggabi_core_python.exception.not_found import NotFound
+from const import DEFAULT, CREDENTIALS
+from exception.bad_request import BadRequest
+from exception.not_found import NotFound
 
 
 def home() -> str:
@@ -29,18 +29,8 @@ def get(
 
     config = ConfigParser()
     p = f"{home()}/{path(group, context)}"
-    try:
-        config.read(p)
-    except:
+
+    if not config.read(p):
         raise NotFound(p) from None
 
     return config._sections[profile]
-
-
-if __name__ == "__main__":
-    print(
-        get(
-            group="upbit",
-            context=CREDENTIALS,
-        )
-    )
