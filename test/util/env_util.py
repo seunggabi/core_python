@@ -1,3 +1,4 @@
+import pytest
 from util.env_util import *
 
 
@@ -18,3 +19,7 @@ def test_get_nonexistent_env_variable():
     result = get(key)
 
     assert result is None
+
+
+if __name__ == "__main__":
+    pytest.main()
