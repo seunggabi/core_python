@@ -42,5 +42,5 @@ esac
 version=$X.$Y.$Z
 echo "[to-be] $version"
 
-awk -v old="__version__ = '$VERSION'" -v new="__version__ = '$version'" '{gsub(old, new)}1' $FILE > $FILE.tmp
-mv $FILE.tmp $FILE
+sed -i.backup "s/__version__ = \"${VERSION}\"/__version__ = \"${version}\"/" ${FILE}
+rm $FILE.backup
