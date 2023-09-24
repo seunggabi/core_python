@@ -15,9 +15,9 @@ def test_successful_get_request_text(mock_requests):
 
     mock_requests.get(url, text=response_data, status_code=200)
 
-    actual = get(url)
+    result = get(url)
 
-    assert actual == response_data
+    assert result == response_data
 
 
 def test_successful_get_request_json(mock_requests):
@@ -26,9 +26,9 @@ def test_successful_get_request_json(mock_requests):
 
     mock_requests.get(url, json=response_data, status_code=200)
 
-    actual = get(url)
+    result = get(url)
 
-    assert actual == response_data
+    assert result == response_data
 
 
 def test_failed_get_request_with_retry(mock_requests):
