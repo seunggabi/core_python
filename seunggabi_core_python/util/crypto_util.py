@@ -1,7 +1,7 @@
 import hashlib
 import base64
 
-from seunggabi_core_python.util import date_util
+from util import date_util
 
 ENCODE = "utf-8"
 DELIMITER = "$"
@@ -39,10 +39,3 @@ def crypt(plain: str, seed: str = "", seed2: str = "") -> str:
     c = sha256(c, seed2)
 
     return encode(c + DELIMITER + str(date_util.timestamp()))
-
-
-if __name__ == "__main__":
-    e = crypt("seunggabi@gmail.com")
-    d = decode(e)
-    print(e)
-    print(d)
