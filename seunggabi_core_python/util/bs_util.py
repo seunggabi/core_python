@@ -1,4 +1,4 @@
-from util import request_util
+from seunggabi_core_python.util import request_util
 from bs4 import BeautifulSoup
 
 

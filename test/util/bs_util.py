@@ -16,7 +16,10 @@ URL = "https://coinmarketcap.com/ko/charts/"
 OBJ = {"href": "/ko/charts/#dominance-percentage"}
 
 
-@patch("util.request_util.get", return_value=SAMPLE_HTML_CONTENT)
+@patch(
+    "seunggabi_core_python.util.request_util.get",
+    return_value=SAMPLE_HTML_CONTENT,
+)
 def test_crawl(mock_get):
     result = crawl(url=URL, obj=OBJ)
     expected = "Sample Text"

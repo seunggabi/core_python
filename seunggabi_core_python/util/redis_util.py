@@ -1,7 +1,7 @@
 import redis
 
-from exception.bad_request import BadRequest
-from util import json_util
+from seunggabi_core_python.exception.bad_request import BadRequest
+from seunggabi_core_python.util import json_util
 
 PORT = 6379
 TTL = 10
