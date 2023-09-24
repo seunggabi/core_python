@@ -3,7 +3,6 @@ from util.date_util import *
 from datetime import datetime
 
 
-# 테스트 케이스: today 함수 테스트
 def test_today_default_format():
     expected_format = "%Y%m%d"
     actual = today()
