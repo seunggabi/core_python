@@ -1,1 +1,6 @@
 pytest
+pytest-cov
+
+requests_mock
+mockredispy
+redis

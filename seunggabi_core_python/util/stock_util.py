@@ -1,14 +1,15 @@
+from typing import Union
 from decimal import Decimal
 
 
-def unit(n):
+def unit(n: Union[int, float, Decimal]):
     n = abs(n)
     index = str(n).find(".")
 
     if n < 1:
         pow = len(str(n)[index + 1 :])
 
-        v = Decimal(1)
+        v = Decimal("0.01")
         for _ in range(pow):
             v /= Decimal(10)
 
@@ -29,14 +30,12 @@ def unit(n):
     return int(v)
 
 
-def gap(start: Decimal, end: Decimal) -> int:
+def gap(
+    start: Union[int, float, Decimal], end: Union[int, float, Decimal]
+) -> int:
     cnt = 0
     while start <= end:
         start += unit(start)
         cnt += 1
 
     return cnt
-
-
-if __name__ == "__main__":
-    print(gap(Decimal("0.01"), Decimal(1005)))

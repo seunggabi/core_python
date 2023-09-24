@@ -1,6 +1,7 @@
 .idea
 .venv
 .pytest_cache
+.coverage
 
 seunggabi_core_python.egg-info
 dist
