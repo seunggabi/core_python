@@ -1,7 +1,7 @@
 import redis
 
-from seunggabi_core_python.exception.bad_request import BadRequest
-from seunggabi_core_python.util import json_util
+from exception.bad_request import BadRequest
+from util import json_util
 
 PORT = 6379
 TTL = 10
@@ -28,9 +28,13 @@ def get(
         raise BadRequest()
 
     o = conn.get(key)
-    if o:
+    if not o:
+        return None
+
+    try:
         return json_util.to_dict(o)
-    return o
+    except:
+        return o.decode()
 
 
 def set(
