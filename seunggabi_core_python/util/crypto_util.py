@@ -1,7 +1,7 @@
 import hashlib
 import base64
 
-from util import date_util
+from seunggabi_core_python.util import date_util
 
 ENCODE = "utf-8"
 DELIMITER = "$"

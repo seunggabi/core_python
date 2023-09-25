@@ -1,7 +1,7 @@
 import requests
 
 from typing import Union, Any
-from exception.not_ok import NotOk
+from seunggabi_core_python.exception.not_ok import NotOk
 
 
 def get(
