@@ -7,6 +7,9 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
 }
 
+OK = 200
+RETRY = 3
+
 
 def ok(response):
     try:
@@ -18,7 +21,7 @@ def ok(response):
 def get(
     url: str,
     params: Union[dict, None] = None,
-    retry: int = 3,
+    retry: int = RETRY,
     headers=None,
 ) -> Any:
     params = params or {}
@@ -30,7 +33,7 @@ def get(
         headers=headers,
     )
 
-    if response.status_code == 200:
+    if response.status_code == OK:
         return ok(response)
 
     retry -= 1
@@ -43,7 +46,7 @@ def get(
 def post_data(
     url: str,
     data: Union[dict, None] = None,
-    retry: int = 3,
+    retry: int = RETRY,
     headers=None,
 ) -> Any:
     data = data or {}
@@ -55,7 +58,7 @@ def post_data(
         headers=headers,
     )
 
-    if response.status_code == 200:
+    if response.status_code == OK:
         return ok(response)
 
     retry -= 1
@@ -68,7 +71,7 @@ def post_data(
 def post_json(
     url: str,
     json: Union[dict, None] = None,
-    retry: int = 3,
+    retry: int = RETRY,
     headers=None,
 ) -> Any:
     json = json or {}
@@ -80,7 +83,7 @@ def post_json(
         headers=headers,
     )
 
-    if response.status_code == 200:
+    if response.status_code == OK:
         return ok(response)
 
     retry -= 1
