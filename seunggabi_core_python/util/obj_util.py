@@ -4,6 +4,8 @@ def safe_get(
     default=None,
     force_key_str=False,
 ):
+    key = str(key)
+
     try:
         for k in key.split("."):
             if not force_key_str:
