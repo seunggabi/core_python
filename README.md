@@ -21,7 +21,7 @@ pip3 install -r requirements.txt
 
 cd sh
 
-sh version.sh y
+sh version.sh z
 sh tag.sh 1
 sh deploy.sh
 ```

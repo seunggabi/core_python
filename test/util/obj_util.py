@@ -38,5 +38,17 @@ def test_safe_get_numeric_key_force_str():
     assert result is None
 
 
+def test_safe_array_key_int():
+    obj = [10, 20, 30]
+    result = safe_get(obj, 0)
+    assert result == 10
+
+
+def test_safe_array_key_str():
+    obj = [10, 20, 30]
+    result = safe_get(obj, "0")
+    assert result == 10
+
+
 if __name__ == "__main__":
     pytest.main()
