@@ -16,4 +16,7 @@ def to_dict(s: str) -> dict:
     try:
         return json.loads(s)
     except:
-        return json.loads(json.dumps(eval(s)))
+        try:
+            return json.loads(json.dumps(eval(s)))
+        except:
+            return s
