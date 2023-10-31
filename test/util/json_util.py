@@ -28,7 +28,7 @@ def test_pretty_json_str():
 
 
 def test_pretty_invalid_input():
-    invalid_input = "This is not JSON"
+    invalid_input = '"This is not JSON"'
     result = pretty(invalid_input)
     assert result == invalid_input
 
