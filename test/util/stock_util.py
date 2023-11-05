@@ -3,6 +3,8 @@ from util.stock_util import *
 
 
 def test__unit():
+    assert Decimal("0.0001") == unit(0.001)
+    assert Decimal("0.0001") == unit(0.01)
     assert Decimal("0.001") == unit(0.1)
     assert Decimal("0.01") == unit(1)
     assert Decimal("0.1") == unit(10)

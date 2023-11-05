@@ -13,6 +13,8 @@ def unit(n: Union[int, float, Decimal]):
         for _ in range(pow):
             v /= Decimal(10)
 
+        if v <= Decimal("0.0001"):
+            return Decimal("0.0001")
         return v
 
     if n < 10:
