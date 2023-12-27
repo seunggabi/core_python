@@ -15,7 +15,4 @@ def timestamp() -> str:
 
 
 def ts(date: str, fmt: str = "%Y%m%d"):
-    input_date_time = datetime.strptime(date, fmt)
-    utc_time = input_date_time.replace(tzinfo=timezone.utc)
-
-    return int(utc_time.timestamp())
+    return int(datetime.strptime(date, fmt).timestamp())
