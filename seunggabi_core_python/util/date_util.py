@@ -1,6 +1,5 @@
 import time
-
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 def today(fmt: str = "%Y%m%d") -> str:
@@ -13,3 +12,7 @@ def isoformat() -> str:
 
 def timestamp() -> str:
     return str(time.time())
+
+
+def ts(date: str, fmt: str = "%Y%m%d"):
+    return int(datetime.strptime(date, fmt).timestamp())
