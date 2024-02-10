@@ -1,4 +1,5 @@
 import pytest
+
 from util.json_util import *
 
 
@@ -31,6 +32,13 @@ def test_pretty_invalid_input():
     invalid_input = '"This is not JSON"'
     result = pretty(invalid_input)
     assert result == invalid_input
+
+
+def test_to_dict_with_attr():
+    json_str = '{"name": "John", "age": 30, "city": "New York"}'
+    result = to_dict_with_attr(json_str)
+    expected = 30
+    assert result.age == expected
 
 
 if __name__ == "__main__":

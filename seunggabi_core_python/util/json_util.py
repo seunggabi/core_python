@@ -20,3 +20,17 @@ def to_dict(s: str) -> dict:
             return json.loads(json.dumps(eval(s)))
         except:
             return s
+
+
+def to_dict_with_attr(s: str) -> dict:
+    d = to_dict(s)
+
+    o = JsonObject()
+    for k, v in d.items():
+        setattr(o, k, v)
+
+    return o
+
+
+class JsonObject:
+    pass
